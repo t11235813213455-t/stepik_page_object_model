@@ -19,9 +19,20 @@ class BasePage():
             return None
         return self.browser.find_element(how, what).text
 
+    def go_to_basket(self):
+        try: 
+            link = self.browser.find_element(*BasePageLocators.BASKET)
+            link.click()
+        except (NoSuchElementException):
+            assert False, "View basket button is not present"
+
     def go_to_login_page(self):
-        link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
-        link.click()
+        try: 
+            link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
+            link.click()
+        except (NoSuchElementException):
+            assert False, "Login link is not presented"
+        
 
     def is_disappeared(self, how, what, timeout=4):
         try:
