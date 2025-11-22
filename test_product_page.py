@@ -87,14 +87,15 @@ class TestUserAddToBasketFromProductPage():
         link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
         self.page = LoginPage(browser, link)
         self.page.open()
-        #self.page.register_new_user("test@ya.ru", "test123test123")
-        self.page.login_user("test@ya.ru", "test123test123")
-        yield
+        email = str(time.time()) + "@fakemail.org"
+        self.page.register_new_user(email, "test123test123")
+        #self.page.login_user("test@ya.ru", "test123test123")
 
     def test_user_can_add_product_to_basket(self, browser):
         link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
         product_page = ProductPage(browser, link)
         product_page.open() 
+        product_page.should_be_authorized_user()
 
         book_name = product_page.get_book_name()
         price = product_page.get_price()
@@ -109,4 +110,5 @@ class TestUserAddToBasketFromProductPage():
         link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
         product_page = ProductPage(browser, link)    
         product_page.open()  
+        product_page.should_be_authorized_user()
         product_page.should_not_be_success_message()
