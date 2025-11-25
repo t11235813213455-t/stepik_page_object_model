@@ -1,7 +1,7 @@
-from Pages.main_page import MainPage
-from Pages.base_page import BasePage
-from Pages.login_page import LoginPage
-from Pages.basket_page import BasketPage
+from .Pages.main_page import MainPage
+from .Pages.base_page import BasePage
+from .Pages.login_page import LoginPage
+from .Pages.basket_page import BasketPage
 import pytest
 import time
 from selenium.webdriver.common.by import By

@@ -1,8 +1,8 @@
-from Pages.main_page import MainPage
-from Pages.base_page import BasePage
-from Pages.login_page import LoginPage
-from Pages.product_page import ProductPage
-from Pages.basket_page import BasketPage
+from .Pages.main_page import MainPage
+from .Pages.base_page import BasePage
+from .Pages.login_page import LoginPage
+from .Pages.product_page import ProductPage
+from .Pages.basket_page import BasketPage
 import time
 from selenium.common.exceptions import NoSuchElementException
 import pytest
