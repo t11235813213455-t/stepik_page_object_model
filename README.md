@@ -1,6 +1,7 @@
 This is my repo to study *Page Object Model* pattern, course **Automation with Selenium and Python**.
 It contains the following tests:
-##Tests for product page:
+
+## Tests for product page:
 1. test_guest_can_add_product_to_basket (**need_review**)
 2. test_guest_can_go_to_login_page_from_product_page (**need_review**)
 3. test_guest_cant_see_product_in_basket_opened_from_product_page (**need_review**)
