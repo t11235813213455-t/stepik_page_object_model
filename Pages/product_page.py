@@ -19,10 +19,6 @@ class ProductPage(BasePage):
     def add_to_basket(self):
         add_to_basket_button = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BUTTON)
         add_to_basket_button.click() 
-
-        #waiting until basket loaded
-        timeout = 5
-        WebDriverWait(self.browser, timeout).until(EC.presence_of_element_located(ProductPageLocators.SUCCESS_MESSAGE))
        
     def get_book_name(self):
         return self.get_text_of_element(*ProductPageLocators.BOOK_NAME)
